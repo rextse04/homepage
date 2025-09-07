@@ -42,7 +42,17 @@ function Introduction() {
 }
 
 function Skills() {
-    return <Card id="skills" title="Skills">
+    return <Card id="skills" title="Skills" doc={<>
+        <section>
+            <span className="legend high">Proficient</span>
+            : completed at least one non-trivial project with the technology,
+            with knowledge of best practices and experience with most paradigms and facilities.
+        </section>
+        <section>
+            <span className="legend medium">Skilled</span>
+            : capability and experience in using the technology in its common use cases.
+        </section>
+    </>}>
         <section>
             <header>Programming Languages</header>
             <ul className="icon-list">

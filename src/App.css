@@ -5,6 +5,7 @@
 html {
     color-scheme: light dark;
     font-family: "Montserrat", sans-serif, system-ui;
+    font-size: 16px;
     width: 100%;
     height: 100%;
 }
@@ -23,7 +24,6 @@ body {
     min-width: 100%;
     min-height: 100%;
     color: var(--color);
-    font-size: 16px;
 }
 .app[data-theme="light"] {
     --theme-color: gold;
@@ -58,9 +58,12 @@ body {
 
 .app-header {
     position: sticky;
+    top: 0;
+    z-index: 99;
     width: 100%;
     padding: 10px;
     border-bottom: 2px solid var(--border-color);
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -70,12 +73,12 @@ body {
     font: inherit;
 }
 
-.app-header .app-header-links {
+.app-header .links {
     display: flex;
     flex-direction: row;
     gap: 5px;
 }
-.app-header .app-header-links button {
+.app-header .links button {
     background: none;
     padding: 10px;
     border: none;
@@ -84,15 +87,22 @@ body {
     cursor: pointer;
     transition: transform 100ms;
 }
-.app-header .app-header-links button:hover {
+.app-header .links button:hover {
     background-color: var(--header-hover-color);
 }
-.app-header .app-header-links button:active {
+.app-header .links button:active {
     background-color: var(--header-hover-color);
     transform: scale(0.95);
 }
-.app-header .app-header-links button.active {
+.app-header .links button.active {
     background-color: var(--header-active-color);
+}
+
+.app-header .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
 }
 
 .app-header button.theme-toggle {
