@@ -3,6 +3,11 @@
     flex-direction: row;
     gap: 20px;
 }
+@media screen and (width < 650px) {
+    #introduction .content {
+        flex-direction: column;
+    }
+}
 #introduction .text > header {
     font-size: larger;
 }
@@ -10,6 +15,7 @@
 .profile {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 .profile > .pic {
@@ -39,11 +45,19 @@
     margin-bottom: 10px;
     text-decoration: underline;
 }
-#skills .high {
+.app[data-theme="light"] #skills .high {
     --decoration-color: lightgreen;
     --decoration-hover-color: darkseagreen;
 }
-#skills .medium {
+.app[data-theme="dark"] #skills .high {
+    --decoration-color: darkgreen;
+    --decoration-hover-color: darkseagreen;
+}
+.app[data-theme="light"] #skills .medium {
     --decoration-color: lightblue;
+    --decoration-hover-color: skyblue;
+}
+.app[data-theme="dark"] #skills .medium {
+    --decoration-color:royalblue;
     --decoration-hover-color: skyblue;
 }
