@@ -7,7 +7,7 @@ type DownloadProps = {
     children?: React.ReactNode;
 };
 function Download({ title, href, children } : DownloadProps) {
-    return <Card title={title} buttons={[<a key="download" className="icon-button" href={href}>
+    return <Card title={title} buttons={[<a key="download" title="download" className="icon-button" href={href}>
         <i className="fa-solid fa-download"></i>
     </a>]}>
         {children}

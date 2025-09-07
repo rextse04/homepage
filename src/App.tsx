@@ -25,7 +25,8 @@ function Header() {
         </div>
         <div className="filler" />
         <div className="buttons">
-            <button className={["icon-button", "circular", "doc-button", hintActive ? "active" : ""].join(" ")}
+            <button title="website guide"
+                className={["icon-button", "circular", "doc-button", hintActive ? "active" : ""].join(" ")}
                 onClick={() => setHintActive(!hintActive)}
                 onBlur={() => setHintActive(false)}>
                 <i className="fa-solid fa-question"></i>
@@ -37,7 +38,7 @@ function Header() {
                     </div>
                 </div>
             </button>
-            <button className={["icon-button", "circular", "theme-toggle"].join(" ")}
+            <button title="switch theme" className={["icon-button", "circular", "theme-toggle"].join(" ")}
                 onClick={() => setTheme(!theme)}>
                 <i className="fa-solid fa-lightbulb"></i>
             </button>

@@ -167,7 +167,7 @@ function Projects() {
     return <Card id="projects" title="Previous and Current Projects">
         <table className="cv-table">
             <tbody>
-                <CVTableRow period="2025-now" title="Final Year Project: DOCA GPUNetIO for efficient network communication with application to AI">
+                <CVTableRow period="2025-now" title="Final Year Project: DOCA GPUNetIO for Efficient Network Communication with Application to AI">
                     <ul>
                         <li>Industrial co-operation with NVIDIA under the supervision of Prof Cindy Li and NVIDIA engineers.</li>
                         <li>Focus: Implementing and proposing novel uses of DOCA technology to boost computational efficiency in real-life scenarios.</li>
