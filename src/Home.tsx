@@ -144,6 +144,9 @@ function Education() {
                         <li>MATH3131 (Honors in Linear and Abstract Algebra II): A</li>
                     </ul>
                 </CVTableRow>
+                <CVTableRow period="2025" title="Lancaster University">
+                    As part of HKUST's SBM exchange programme.
+                </CVTableRow>
                 <CVTableRow period="2016-2022" title="St Paul's Co-education College (SPCC)">
                     Hong Kong Diploma of Secondary Education (HKDSE) results:
                     <ul>
