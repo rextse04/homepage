@@ -131,7 +131,7 @@ function Education() {
     return <Card id="education" title="Education">
         <table className="cv-table">
             <tbody>
-                <CVTableRow period="2022-2026" title="Hong Kong University of Science and Technology (HKUST)">
+                <CVTableRow period="2022 – 2026" title="Hong Kong University of Science and Technology (HKUST)">
                     BSc in Quantitative Finance, Computer Science and Mathematics <br/>
                     Current GPA: 3.968/4.3 (up to 2024-25 summer) <br/>
                     Notable courses:
@@ -147,7 +147,7 @@ function Education() {
                 <CVTableRow period="2025" title="Lancaster University">
                     As part of HKUST's SBM exchange programme.
                 </CVTableRow>
-                <CVTableRow period="2016-2022" title="St Paul's Co-education College (SPCC)">
+                <CVTableRow period="2016 – 2022" title="St Paul's Co-education College (SPCC)">
                     Hong Kong Diploma of Secondary Education (HKDSE) results:
                     <ul>
                         <li>5** in English and Mathematics (Compulsory Part)</li>
@@ -167,13 +167,13 @@ function Projects() {
     return <Card id="projects" title="Previous and Current Projects">
         <table className="cv-table">
             <tbody>
-                <CVTableRow period="2025 — now" title="Final Year Project: DOCA GPUNetIO for Efficient Network Communication with Application to AI">
+                <CVTableRow period="2025 – now" title="Final Year Project: DOCA GPUNetIO for Efficient Network Communication with Application to AI">
                     <ul>
                         <li>Industrial co-operation with NVIDIA under the supervision of Prof Cindy Li and NVIDIA engineers.</li>
                         <li>Focus: Implementing and proposing novel uses of DOCA technology to boost computational efficiency in real-life scenarios.</li>
                     </ul>
                 </CVTableRow>
-                <CVTableRow period="2024 — now" title="Open Topic in Algorithms and Complexity">
+                <CVTableRow period="2024 – now" title="Open Topic in Algorithms and Complexity">
                     <ul>
                         <li>Continuing research under the supervision of <a href="https://amir.goharshady.com/">Prof Amir Goharshady</a>.</li>
                         <li>Previously part of HKUST's Undergraduate Research Opportunities Program (UROP).</li>
@@ -183,10 +183,10 @@ function Projects() {
                 <CVTableRow period="2024" title="Credit Planner">
                     A React-based static <a href="https://rextse04.github.io/credit-planner/">credit planner</a> for HKUST students.
                 </CVTableRow>
-                <CVTableRow period="2021 — 2022" title="The Simpler the Better: A Novel Adversarial Approach towards Weakly-Supervised Image Segmentation">
+                <CVTableRow period="2021 – 2022" title="The Simpler the Better: A Novel Adversarial Approach towards Weakly-Supervised Image Segmentation">
                     A deep-learning model that utilises adversarial training to separate an object in an image from the surrounding without ground-truth labels during training.
                 </CVTableRow>
-                <CVTableRow period="2021 — 2022" title="A New Approach to Eye-to-Face Synthesis">
+                <CVTableRow period="2021 – 2022" title="A New Approach to Eye-to-Face Synthesis">
                     A deep-learning model that utilises the VGG image recognition model for transfer training to solve an eye-to-face image generation problem.
                 </CVTableRow>
             </tbody>
@@ -198,10 +198,10 @@ function Awards() {
     return <Card id="awards" title="Scholarships and Awards">
         <table className="cv-table">
             <tbody>
-                <CVTableRow period="2022 — now" title="Dean's List">
+                <CVTableRow period="2022 – now" title="Dean's List">
                     in all semesters except 2023-24 Spring.
                 </CVTableRow>
-                <CVTableRow period="2022 — 2026" title="HKSAR Government Scholarship">
+                <CVTableRow period="2022 – 2026" title="HKSAR Government Scholarship">
                     for exceptional performance in HKDSE.
                 </CVTableRow>
                 <CVTableRow period="2025" title="Fung's Scholarship">
@@ -215,7 +215,7 @@ function Awards() {
                     prize="Top 5 teams in final round">
                     Solved multiple coding challenges in a limited period of time using Python.
                 </CVTableRow>
-                <CVTableRow period="2021 — 2022" title="IEEE Hong Kong Section Pre-University STEM Student Conference 2021"
+                <CVTableRow period="2021 – 2022" title="IEEE Hong Kong Section Pre-University STEM Student Conference 2021"
                     prize="Credit Award">
                     <ul>
                         <li>Collaborated with others to create a prototype for an AI-driven walking stick with obstacle detection.</li>
@@ -226,7 +226,7 @@ function Awards() {
                     prize="Regional Finalist">
                     Collaborated with others to develop and present a novel methodology for semi-supervised image segmentation.
                 </CVTableRow>
-                <CVTableRow period="2020 — 2021" title="2nd International Artificial Intelligence Fair"
+                <CVTableRow period="2020 – 2021" title="2nd International Artificial Intelligence Fair"
                     prize="First Prize">
                     Collaborated with others to present an eye-to-face image generation deep learning model.
                 </CVTableRow>
