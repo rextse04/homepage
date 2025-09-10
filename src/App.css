@@ -24,6 +24,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     color: var(--color);
+    --collapse-transition-time: 300ms;
 }
 .app[data-theme="light"] {
     --theme-color: gold;
@@ -99,10 +100,7 @@ body {
 }
 
 .app-header .buttons {
-    display: flex;
-    flex-direction: row;
     gap: 8px;
-    align-items: center;
 }
 
 .app-header button.theme-toggle {

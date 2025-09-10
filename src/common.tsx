@@ -14,10 +14,45 @@ export function useCollapse(initialValue = false) {
         body: body,
         collapsed: collapsed,
         setCollapsed: setCollapsed,
+        toggle: () => setCollapsed(collapsed => !collapsed),
         bodyHeight: bodyHeight,
         setBodyHeight: setBodyHeight,
         bodyProps: {ref: body},
         wrapperProps: {style: {maxHeight: collapsed ? 0 : (bodyHeight + "px")}}
+    };
+}
+
+export function useCollapsableTitle(initialValue = false) {
+    const hooks = useCollapse(initialValue);
+    const [hover, setHover] = useState(false);
+    const [active, setActive] = useState(false);
+    const btnsf = (e : React.BaseSyntheticEvent) => e.stopPropagation();
+    return {
+        ...hooks,
+        toggleProps: {
+            title: hooks.collapsed ? "expand" : "collapse",
+            onClick: hooks.toggle
+        },
+        buttonsProps: {
+            onClick: btnsf,
+            onPointerOver: btnsf,
+            onPointerOut: btnsf,
+            onPointerDown: btnsf,
+            onPointerUp: btnsf
+        },
+        titleProps: {
+            className: [
+                "title",
+                hooks.collapsed ? "collapsed" : "",
+                hover ? "hover" : "",
+                active ? "active" : ""
+            ].join(" "),
+            onClick: hooks.toggle,
+            onPointerOver: () => setHover(true),
+            onPointerOut: () => setHover(false),
+            onPointerDown: () => setActive(true),
+            onPointerUp: () => setActive(false)
+        }
     };
 }
 
@@ -29,7 +64,7 @@ type CardProps = {
     children?: React.ReactNode;
 };
 export function Card({ id, title, doc, buttons, children }: CardProps) {
-    const {collapsed, setCollapsed, bodyProps, wrapperProps} = useCollapse();
+    const {toggleProps, buttonsProps, titleProps, bodyProps, wrapperProps} = useCollapsableTitle();
     const [docActive, setDocActive] = useState(false);
     const [copySuccess, setCopySuccess] = useState(false);
     const copyBtn = useRef(null as HTMLButtonElement | null);
@@ -44,36 +79,36 @@ export function Card({ id, title, doc, buttons, children }: CardProps) {
             easing: "ease-out"
         }).addEventListener("finish", () => setCopySuccess(false));
     }, [copySuccess]);
-    return <div id={id} className={["card", collapsed ? "collapsed" : ""].join(" ")}>
-        {(title !== undefined) && <div className="title" onDoubleClick={() => setCollapsed(!collapsed)}>
+    return <div id={id} className="card">
+        {(title !== undefined) && <div {...titleProps}>
             <span className="text">{title}</span>
             <div className="filler" />
-            {(buttons !== undefined) && buttons}
-            {(doc !== undefined) && <button title="explanation"
-                className={["icon-button", "doc-button", docActive ? "active" : ""].join(" ")}
-                onClick={() => setDocActive(!docActive)}
-                onDoubleClick={e => e.stopPropagation()}
-                onBlur={() => setDocActive(false)}>
-                <i className="fa-solid fa-question"></i>
-                <div className="card doc">
-                    <div className="content-wrapper">
-                        <div className="content">{doc}</div>
+            <div className="buttons" {...buttonsProps}>
+                {(buttons !== undefined) && buttons}
+                {(doc !== undefined) && <button title="explanation"
+                    className={["icon-button", "doc-button", docActive ? "active" : ""].join(" ")}
+                    onClick={() => setDocActive(!docActive)}
+                    onBlur={() => setDocActive(false)}>
+                    <i className="fa-solid fa-question"></i>
+                    <div className="card doc">
+                        <div className="content-wrapper">
+                            <div className="content">{doc}</div>
+                        </div>
                     </div>
-                </div>
-            </button>}
-            {(id !== undefined) && <button ref={copyBtn} title="copy link to clipboard" className="icon-button"
-                onClick={() => {
-                    const url = new URL(window.location.href);
-                    url.hash = id;
-                    navigator.clipboard.writeText(url.toString()).then(() => setCopySuccess(true));
-                }}>
-                <i className={["fa-solid", copySuccess ? "fa-circle-check" : "fa-link"].join(" ")}
-                    style={{ color: copySuccess ? "green" : undefined }}></i>
-            </button>}
-            <button title={collapsed ? "expand" : "collapse"}
-                className="icon-button collapse-toggle" onClick={() => setCollapsed(!collapsed)}>
-                <i className="fa-solid fa-angle-down"></i>
-            </button>
+                </button>}
+                {(id !== undefined) && <button ref={copyBtn} title="copy link to clipboard" className="icon-button"
+                    onClick={() => {
+                        const url = new URL(window.location.href);
+                        url.hash = id;
+                        navigator.clipboard.writeText(url.toString()).then(() => setCopySuccess(true));
+                    }}>
+                    <i className={["fa-solid", copySuccess ? "fa-circle-check" : "fa-link"].join(" ")}
+                        style={{ color: copySuccess ? "green" : undefined }}></i>
+                </button>}
+                <button className="icon-button collapse-toggle" {...toggleProps}>
+                    <i className="fa-solid fa-angle-down"></i>
+                </button>
+            </div>
         </div>}
         <div className="content-wrapper" {...wrapperProps}>
             <div className="content" {...bodyProps}>{children}</div>

@@ -2,6 +2,12 @@
     flex: 1;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .icon-button {
     background: none;
     border: none;
@@ -18,10 +24,10 @@
     font: inherit;
     font-size: smaller;
 }
-.icon-button:hover, .icon-button.hover {
+.icon-button:hover, .icon-button.hover, .title.hover > .buttons > .collapse-toggle {
     --button-color: var(--hover-color);
 }
-.icon-button:active, .icon-button.active {
+.icon-button:active, .icon-button.active, .title.active > .buttons > .collapse-toggle {
     --button-color: var(--active-color);
 }
 .icon-button > * {
@@ -35,7 +41,6 @@
 .card {
     border: 2px solid var(--decoration-color);
     border-radius: 8px;
-    --collapse-transition-time: 300ms;
 }
 .card:hover {
     border-color: var(--decoration-hover-color);
@@ -50,23 +55,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
 }
-.card.collapsed > .title {
+.title.collapsed {
     border-bottom-width: 0;
-    transition-delay: var(--collapse-transition-time);
+    transition: border-bottom-width 0s var(--collapse-transition-time);
 }
 .title > .text {
     font-weight: bolder;
 }
-.title > .collapse-toggle {
+.title > .buttons > .collapse-toggle {
     transition: transform 100ms;
 }
-.collapsed > .title > .collapse-toggle {
+.title.collapsed > .buttons > .collapse-toggle {
     transform: rotate(-0.5turn);
 }
 .content-wrapper {
     overflow: hidden;
-    --collapse-transition-time: 300ms;
     transition: max-height var(--collapse-transition-time);
 }
 .card > .content-wrapper > .content {

@@ -1,4 +1,4 @@
-import { Card, useCollapse } from "./common";
+import { Card, useCollapsableTitle } from "./common";
 import "./common.css";
 import "./Home.css";
 
@@ -105,20 +105,21 @@ type CVTableRowProps = {
     children?: React.ReactNode;
 };
 function CVTableRow({ period, title, prize, children } : CVTableRowProps) {
-    const {collapsed, setCollapsed, bodyProps, wrapperProps} = useCollapse(true);
+    const {toggleProps, buttonsProps, titleProps, bodyProps, wrapperProps} = useCollapsableTitle(true);
     return <tr>
         <td>{period}</td>
-        <td className={collapsed ? "collapsed" : ""}>
-            <div className="title" onDoubleClick={() => setCollapsed(!collapsed)}>
+        <td>
+            <div {...titleProps}>
                 <span className="text">
                     {title}
                     {prize && <>&emsp;<span className="prize">{prize}</span></>}
                 </span>
                 <div className="filler"></div>
-                <button title={collapsed ? "expand" : "collapse"}
-                    className="icon-button collapse-toggle" onClick={() => setCollapsed(!collapsed)}>
-                    <i className="fa-solid fa-angle-down"></i>
-                </button>
+                <div className="buttons" {...buttonsProps}>
+                    <button className="icon-button collapse-toggle" {...toggleProps}>
+                        <i className="fa-solid fa-angle-down"></i>
+                    </button>
+                </div>
             </div>
             <div className="content-wrapper" {...wrapperProps}>
                 <div className="content" {...bodyProps}>{children}</div>

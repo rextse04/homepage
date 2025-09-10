@@ -15,7 +15,6 @@ const ThemeContext = createContext(null as any); // true: light, false: dark
 function Header() {
     const [page, setPage] = useContext(PageContext);
     const [theme, setTheme] = useContext(ThemeContext);
-    const [hintActive, setHintActive] = useState(false);
     return <header className="app-header">
         <div className="links">
             {Object.keys(pages).map(name => (
@@ -25,19 +24,6 @@ function Header() {
         </div>
         <div className="filler" />
         <div className="buttons">
-            <button title="website guide"
-                className={["icon-button", "circular", "doc-button", hintActive ? "active" : ""].join(" ")}
-                onClick={() => setHintActive(!hintActive)}
-                onBlur={() => setHintActive(false)}>
-                <i className="fa-solid fa-question"></i>
-                <div className="card doc">
-                    <div className="content-wrapper">
-                        <div className="content">
-                            You can double-click on a collapsable title to toggle the menu.
-                        </div>
-                    </div>
-                </div>
-            </button>
             <button title="switch theme" className={["icon-button", "circular", "theme-toggle"].join(" ")}
                 onClick={() => setTheme(!theme)}>
                 <i className="fa-solid fa-lightbulb"></i>
