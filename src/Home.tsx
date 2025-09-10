@@ -105,7 +105,7 @@ type CVTableRowProps = {
     children?: React.ReactNode;
 };
 function CVTableRow({ period, title, prize, children } : CVTableRowProps) {
-    const {toggleProps, buttonsProps, titleProps, bodyProps, wrapperProps} = useCollapsableTitle(true);
+    const {toggleProps, buttonsProps, titleProps, bodyProps, wrapperProps} = useCollapsableTitle();
     return <tr>
         <td>{period}</td>
         <td>
@@ -117,7 +117,7 @@ function CVTableRow({ period, title, prize, children } : CVTableRowProps) {
                 <div className="filler"></div>
                 <div className="buttons" {...buttonsProps}>
                     <button className="icon-button collapse-toggle" {...toggleProps}>
-                        <i className="fa-solid fa-angle-down"></i>
+                        <i className="fa-solid fa-angle-up"></i>
                     </button>
                 </div>
             </div>

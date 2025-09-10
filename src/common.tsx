@@ -106,7 +106,7 @@ export function Card({ id, title, doc, buttons, children }: CardProps) {
                         style={{ color: copySuccess ? "green" : undefined }}></i>
                 </button>}
                 <button className="icon-button collapse-toggle" {...toggleProps}>
-                    <i className="fa-solid fa-angle-down"></i>
+                    <i className="fa-solid fa-angle-up"></i>
                 </button>
             </div>
         </div>}
