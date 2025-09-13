@@ -28,7 +28,7 @@ function Introduction() {
             <p>
                 I am a Year 4 student at <a href="https://hkust.edu.hk/">HKUST</a>,
                 studying Quantitative Finance, Computer Science and Mathematics, in the order of my majors.
-                My research focuses on parameterised algorithms and its applications on solving hard real-life problems,
+                My research focuses on parameterised algorithms and their applications on solving hard real-life problems,
                 particularly in the area of compiler optimisations.
                 Apart from algorithms, I also like to delve into programming languages and software engineering,
                 which have inspired a few (tiny) pet projects of mine.
@@ -171,7 +171,7 @@ function Projects() {
                 <CVTableRow period="2025 – now" title="Final Year Project: DOCA GPUNetIO for Efficient Network Communication with Application to AI">
                     <ul>
                         <li>Industrial co-operation with NVIDIA under the supervision of Prof Cindy Li and NVIDIA engineers.</li>
-                        <li>Focus: Implementing and proposing novel uses of DOCA technology to boost computational efficiency in real-life scenarios.</li>
+                        <li>Propose, implement and evaluate novel uses of DOCA GPUNetIO technology with the aim of boosting efficiency of high-traffic network workload.</li>
                     </ul>
                 </CVTableRow>
                 <CVTableRow period="2024 – now" title="Open Topic in Algorithms and Complexity">
@@ -214,7 +214,7 @@ function Awards() {
                 </CVTableRow>
                 <CVTableRow period="2023" title="Jane Street: Electronic Trading Challenge"
                     prize="Top 5 teams in final round">
-                    Solved multiple coding challenges in a limited period of time using Python.
+                    Designed trading algorithms for a number of financial products as a team effort.
                 </CVTableRow>
                 <CVTableRow period="2021 – 2022" title="IEEE Hong Kong Section Pre-University STEM Student Conference 2021"
                     prize="Credit Award">
