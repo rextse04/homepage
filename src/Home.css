@@ -46,7 +46,7 @@
     text-decoration: underline;
 }
 #skills .doc .legend {
-    color: var(--decoration-color);
+    color: var(--decoration-hover-color);
 }
 .app[data-theme="light"] #skills .high {
     --decoration-color: lightgreen;
