@@ -243,9 +243,6 @@ function Others() {
                 <CVTableRow period="2025" title="Undergradute Teaching Assistant (UGTA) for COMP2011">
                     Designed and implemented a full programming assignment for the course.
                 </CVTableRow>
-                <CVTableRow period="2024" title="Student Helper at HKUST Open Day">
-                    Answered parents and prospective students' answers at the CSE booth at Open Day.
-                </CVTableRow>
                 <CVTableRow period="2024" title="Undergraduate Teaching Assistant (UGTA) for COMP2012">
                     Assisted the PGTA in managing course logistics and answering students' questions.
                 </CVTableRow>
