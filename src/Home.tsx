@@ -174,7 +174,7 @@ function Projects() {
                         <li>Propose, implement and evaluate novel uses of DOCA GPUNetIO technology with the aim of boosting efficiency of high-traffic network workload.</li>
                     </ul>
                 </CVTableRow>
-                <CVTableRow period="2024 – now" title="Open Topic in Algorithms and Complexity">
+                <CVTableRow period="2024 – now" title="Research Internship">
                     <ul>
                         <li>Continuing research under the supervision of <a href="https://amir.goharshady.com/">Prof Amir Goharshady</a>.</li>
                         <li>Previously part of HKUST's Undergraduate Research Opportunities Program (UROP).</li>
