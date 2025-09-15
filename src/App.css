@@ -113,10 +113,15 @@ body {
 }
 
 .app-body {
-    padding: 10px 20px;
+    padding: 10px 0;
     width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
+}
+.app-body > .card {
+    width: 75ch;
+    max-width: calc(100% - 40px);
 }
