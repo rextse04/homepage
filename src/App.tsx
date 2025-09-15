@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Home } from "./Home";
 import { Downloads } from "./Downloads";
+import { collapseTime } from "./common";
 import "./common.css";
 import "./App.css";
 
@@ -43,7 +44,8 @@ export function App() {
     const Page = pages[page];
     return <PageContext.Provider value={[page, setPage]}>
     <ThemeContext.Provider value={[theme, setTheme]}>
-    <div className="app" data-theme={theme ? "light" : "dark"}>
+    <div className="app" data-theme={theme ? "light" : "dark"}
+        style={{["--collapse-transition-time" as string]: `${collapseTime}ms`}}>
         <Header />
         <div className="app-body">
             <Page />

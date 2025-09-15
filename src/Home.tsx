@@ -105,7 +105,7 @@ type CVTableRowProps = {
     children?: React.ReactNode;
 };
 function CVTableRow({ period, title, prize, children } : CVTableRowProps) {
-    const {toggleProps, buttonsProps, titleProps, bodyProps, wrapperProps} = useCollapsableTitle();
+    const {toggleProps, buttonsProps, titleProps, wrapperProps, bodyProps} = useCollapsableTitle();
     return <tr>
         <td>{period}</td>
         <td>

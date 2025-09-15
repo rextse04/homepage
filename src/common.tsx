@@ -1,24 +1,39 @@
 import { useEffect, useRef, useState } from "react";
 
+export const collapseTime = 300;
 export function useCollapse(initialValue = false) {
-    const [collapsed, setCollapsed] = useState(initialValue);
+    const [collapsed, setCollapsed] = useState(+initialValue as number | boolean);
+    const wrapper = useRef(null as HTMLDivElement | null);
     const body = useRef(null as HTMLDivElement | null);
-    const [bodyHeight, setBodyHeight] = useState(undefined as number | undefined);
     useEffect(() => {
-        const observer = new ResizeObserver(entries => {
-            setBodyHeight(entries[0].target.scrollHeight);
+        if (typeof(collapsed) === "number") return;
+        const frames = collapsed ? [
+            {maxHeight: body.current?.scrollHeight + "px"},
+            {maxHeight: 0}
+        ] : [
+            {maxHeight: 0},
+            {maxHeight: body.current?.scrollHeight + "px", offset: 1},
+            {maxHeight: "none"}
+        ];
+        const timing = {
+            duration: collapseTime,
+            fill: "forwards" as FillMode,
+            easing: "ease-in-out"
+        };
+        wrapper.current?.animate(frames, timing).finished
+        .then(animation => {
+            animation.commitStyles();
+            animation.cancel();
         });
-        observer.observe(body.current!);
-    }, []);
+    }, [collapsed]);
     return {
+        wrapper: wrapper,
         body: body,
         collapsed: collapsed,
         setCollapsed: setCollapsed,
         toggle: () => setCollapsed(collapsed => !collapsed),
-        bodyHeight: bodyHeight,
-        setBodyHeight: setBodyHeight,
-        bodyProps: {ref: body},
-        wrapperProps: {style: {maxHeight: collapsed ? 0 : (bodyHeight + "px")}}
+        wrapperProps: {ref: wrapper},
+        bodyProps: {ref: body}
     };
 }
 

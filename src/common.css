@@ -72,7 +72,6 @@
 }
 .content-wrapper {
     overflow: hidden;
-    transition: max-height var(--collapse-transition-time);
 }
 .card > .content-wrapper > .content {
     padding: 10px;
