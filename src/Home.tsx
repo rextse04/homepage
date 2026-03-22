@@ -134,7 +134,7 @@ function Education() {
             <tbody>
                 <CVTableRow period="2022 – 2026" title="Hong Kong University of Science and Technology (HKUST)">
                     BSc in Quantitative Finance, Computer Science and Mathematics <br/>
-                    Current GPA: 3.968/4.3 (up to 2024-25 summer) <br/>
+                    Current GPA: 3.941/4.3 (up to 2025-26 Fall) <br/>
                     Notable courses:
                     <ul>
                         <li>COMP2012H (Honors Object-Oriented Programming and Data Structures): A+</li>
@@ -172,6 +172,7 @@ function Projects() {
                     <ul>
                         <li>Industrial co-operation with NVIDIA under the supervision of Prof Cindy Li and NVIDIA engineers.</li>
                         <li>Propose, implement and evaluate novel uses of DOCA GPUNetIO technology with the aim of boosting efficiency of high-traffic network workload.</li>
+                        <li>Creating three implementations of a multiplayer game server in C++ with the aim of comparing the performance of DOCA GPUNetIO with traditional CPU and GPU network communication methods.</li>
                     </ul>
                 </CVTableRow>
                 <CVTableRow period="2024 – now" title="Research Internship">
